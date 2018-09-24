@@ -34,12 +34,20 @@ pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_pconfig_dirs=(lib/pkgconfig)
 
-do_prepare() {
-  if [[ ! -r /usr/bin/file ]]; then
-    ln -sv "$(pkg_path_for file)/bin/file" /usr/bin/file
-    _clean_file=true
-  fi
+# do_prepare() {
+#   if [[ ! -r /usr/bin/file ]]; then
+#     ln -sv "$(pkg_path_for file)/bin/file" /usr/bin/file
+#     _clean_file=true
+#   fi
+# }
+
+do_build() {
+  ./configure \
+    --prefix=${pkg_prefix}
+
+  make
 }
+
 do_check() {
     make check
 }
