@@ -10,4 +10,3 @@ max-sql-memory = ".25"
 [locality]
 region = "default"
 datacenter = "default"
-

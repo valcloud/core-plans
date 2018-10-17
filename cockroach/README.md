@@ -94,4 +94,3 @@ volumes:
 ## Binding
 
 You may bind to any CockroachDB node in the service group, not just the leader - all nodes are able to accept reads and writes
-

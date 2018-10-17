@@ -57,4 +57,3 @@ do_end() {
     rm -fv /usr/bin/env
   fi
 }
-

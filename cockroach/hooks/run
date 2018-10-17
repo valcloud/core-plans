@@ -19,4 +19,3 @@ exec cockroach start \
   --logtostderr=WARNING \
   --log-dir={{pkg.svc_var_path}}/log \
   --temp-dir={{pkg.svc_var_path}}/tmp
-

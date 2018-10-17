@@ -2,4 +2,3 @@
 
 mkdir -p {{pkg.svc_var_path}}/log
 mkdir -p {{pkg.svc_var_path}}/tmp
-
