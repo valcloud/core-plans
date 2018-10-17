@@ -5,6 +5,9 @@ exec cockroach start \
   {{#if cfg.insecure ~}}
   --insecure \
   {{/if ~}}
+  {{#if svc.me.follower ~}}
+  --join={{svc.leader.sys.ip}}:{{svc.leader.cfg.port}} \
+  {{/if ~}}
   --host={{sys.ip}} \
   --port={{cfg.port}} \
   --http-host={{sys.ip}} \
