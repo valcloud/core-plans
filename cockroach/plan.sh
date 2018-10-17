@@ -24,8 +24,11 @@ pkg_build_deps=(
   core/autoconf
 )
 pkg_bin_dirs=(bin)
-pkg_binds_optional=(
-  [cockroach]="port"
+pkg_exports=(
+  [port]="port"
+  [http-port]="http-port"
+  [region]="locality.region"
+  [datacenter]="locality.datacenter"
 )
 
 do_prepare() {
@@ -54,3 +57,4 @@ do_end() {
     rm -fv /usr/bin/env
   fi
 }
+

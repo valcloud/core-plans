@@ -1,3 +1,13 @@
 insecure = true
 port = 26257
 http-port = 8080
+
+# https://www.cockroachlabs.com/docs/stable/recommended-production-settings.html#cache-and-sql-memory-size
+# as a percentage of total memory
+cache = ".25"
+max-sql-memory = ".25"
+
+[locality]
+region = "default"
+datacenter = "default"
+
