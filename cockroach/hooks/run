@@ -4,6 +4,8 @@ exec 2>&1
 exec cockroach start \
   {{#if cfg.insecure ~}}
   --insecure \
+  {{else ~}}
+  --certs-dir="{{pkg.svc_var_path}}/certs" \
   {{/if ~}}
   {{#if svc.me.follower ~}}
   --join={{svc.leader.sys.ip}}:{{svc.leader.cfg.port}} \

@@ -46,8 +46,14 @@ version: '2.4'
 services:
   roach1:
     image: myorigin/cockroach:latest
+    environment:
+      HAB_COCKROACH: |
+        insecure = false
+    ports:
+      - "8080:8080"
+      - "26257:26257"
     volumes:
-      - roach1-data:/hab/svc/roach/data
+      - roach1-data:/hab/svc/cockroach/data
     mem_limit: 1g
     oom_kill_disable: true
     ulimits:
@@ -59,8 +65,14 @@ services:
 
   roach2:
     image: myorigin/cockroach:latest
+    environment:
+      HAB_COCKROACH: |
+        insecure = false
+    ports:
+      - "8081:8080"
+      - "26258:26257"
     volumes:
-      - roach2-data:/hab/svc/roach/data
+      - roach2-data:/hab/svc/cockroach/data
     mem_limit: 1g
     oom_kill_disable: true
     ulimits:
@@ -73,8 +85,14 @@ services:
 
   roach3:
     image: myorigin/cockroach:latest
+    environment:
+      HAB_COCKROACH: |
+        insecure = false
+    ports:
+      - "8082:8080"
+      - "26259:26257"
     volumes:
-      - roach3-data:/hab/svc/roach/data
+      - roach3-data:/hab/svc/cockroach/data
     mem_limit: 1g
     oom_kill_disable: true
     ulimits:

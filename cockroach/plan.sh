@@ -29,6 +29,7 @@ pkg_exports=(
   [http-port]="http-port"
   [region]="locality.region"
   [datacenter]="locality.datacenter"
+  [ca_cert]="certs.ca_cert"
 )
 
 do_prepare() {
